@@ -1,0 +1,159 @@
+/* Custom Styles */
+body {
+  font-family: 'Inter';
+}
+
+/* Task 1 Styles ----------------------------------------------------------------------------------------*/
+
+.circle {
+  z-index: 100;
+}
+
+.tooltip {
+  /* position: absolute; */
+  text-align: left;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.font-big {
+  font-size: 1.25rem;
+}
+
+.task1-panel {
+  /* display: flex !important; */
+  /* justify-content: center !important; */
+  align-items: center !important;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: row;
+}
+
+.legend-class {
+  z-index: 100;
+}
+
+.legend-line {
+  z-index: -999;
+}
+
+/* Task 2 Styles ----------------------------------------------------------------------------------------*/
+
+.form-check-input.blue:checked {
+  background-color: #485578;
+  border-color: #485578;
+}
+.form-check-input.orange:checked {
+  background-color: #fa863d;
+  border-color: #fa863d;
+}
+.form-check-input.green:checked {
+  background-color: #3ca5a9;
+  border-color: #3ca5a9;
+}
+.form-check-input.yellow:checked {
+  background-color: #ffd66a;
+  border-color: #ffd66a;
+}
+.form-check-input.lightBlue:checked {
+  background-color: #5ac0de;
+  border-color: #5ac0de;
+}
+
+.axis text,
+.slider text {
+  font-size: 16px;
+}
+
+div.chart-title,
+.chart-title {
+  width: 700px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: gray;
+}
+
+/* Styles for Barchart tooltip */
+div.mytooltip {
+  position: absolute;
+  padding: 20px;
+  font: 12px sans-serif;
+  color: grey;
+  background: white;
+  border-radius: 8px;
+  pointer-events: none;
+  font-size: larger;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  animation: 0.2 cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Task 3 Styles ----------------------------------------------------------------------------------------*/
+
+div#map_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg#map_svg {
+  width: 1500px;
+  height: 1200px;
+}
+
+svg#map_bar_svg {
+  width: 1028px;
+  height: 750px;
+}
+
+#task3_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#map_bar_svg {
+  width: 100%;
+}
+
+div.task-panel {
+  display: flex;
+  padding: 3rem;
+  margin: 3rem;
+  border-bottom: lightgray 2px solid;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.radio-div {
+  font-size: larger;
+  margin-left: 5rem;
+}
+
+img.question-svg {
+  width: 50%;
+  height: 150px;
+}
+
+.title-text {
+  font-family: 'Alumni Sans';
+  font-weight: 700;
+  font-size: 6rem;
+  color: #485578;
+}
+
+.subtitle-text {
+  font-family: 'Alumni Sans';
+  font-weight: 300;
+  font-size: 3rem;
+  /* color: #fa863d; */
+}
+
+img.team-img {
+  width: 75%;
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png" />
+    <!-- CSE-578-Final-Project -->
+    <!-- Dhruvil, Shivam, Neel, Niket, Nikhil , Vishal -->
+    <title>VAST 2022: MC-3</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10" />
+
+    <!-- STYLES -->
+    <!-- Will be updated later to our export of customised sass -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@200;300;400;600&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <!-- SCRIPTS -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Linking D3 v7 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="js/color.js"></script>
+    <script src="js/task1.js"></script>
+    <script src="js/task2.js"></script>
+    <script src="js/task3.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+    <div class="myContainer sticky-top bg-white shadow-sm">
+      <h3></h3>
+      <h1 class="text-center pt-5 mb-3 title-text">
+        <a
+          href="https://vast-challenge.github.io/2022/description.html#:~:text=Challenge%203%3A%20Economic"
+          target="_blank"
+          style="text-decoration: none; color: inherit"
+        >
+          VAST Challenge 2022 - Challenge 3: Economic
+        </a>
+      </h1>
+      <!-- <h3 class="text-center mb-3 text-dark subtitle-text">
+        Dhruvil-Vishal-Niket-Nikhil-Shivam-Neel
+      </h3> -->
+      <!-- <hr /> -->
+      <div class="text-center">
+        <div class="display-3">
+          <div id="slider-range"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- Tab panes -->
+      <div class="my-5">
+        <img src="./img/Q1.svg" alt="Question-1" class="question-svg" />
+        <div class="task1-panel task-panel outer-div" id="task1">
+          <div>
+            <div class="control-panel">
+              <div style="width: 100%">
+                <label for="dataSelect" class="form-label" style="font-size: 1.25rem"
+                  >View By</label
+                >
+                <select id="dataSelect" class="form-select w-75">
+                  <option value="Revenue">Revenue</option>
+                  <option value="Footfall">Footfall</option>
+                </select>
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  text-align: left;
+                  padding: 10px;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-end;
+                "
+              >
+                <div class="mr-5" style="display: flex">
+                  <div
+                    style="
+                      width: 30px;
+                      height: 30px;
+                      background-color: #485578;
+                      margin-right: 15px;
+                      border-radius: 100px;
+                    "
+                  ></div>
+                  <p style="font-size: 1.25rem">Restaurant</p>
+                </div>
+
+                <div class="mr-5" style="display: flex">
+                  <div
+                    style="
+                      width: 30px;
+                      height: 30px;
+                      background-color: #fa863d;
+                      margin-right: 15px;
+                      border-radius: 100px;
+                    "
+                  ></div>
+                  <p style="font-size: 1.25rem">Pub</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="pieChart" class="p-5"></div>
+          </div>
+
+          <div class="d-none" id="barChart"></div>
+
+          <div class="d-none" id="histogramChart"></div>
+
+          <div
+            id="tooltip"
+            class="shadow-sm"
+            style="
+              position: absolute;
+              opacity: 0;
+              pointer-events: none;
+              background-color: white;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            "
+          ></div>
+        </div>
+
+        <img src="./img/Q2.svg" alt="Question-2" class="question-svg" />
+        <div class="task2-panel task-panel" id="task2">
+          <div>
+            <div class="controls d-flex mb-5">
+              <div
+                style="
+                  width: 100%;
+                  text-align: left;
+                  padding: 10px;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-end;
+                "
+              >
+                <div class="mr-5" style="display: flex">
+                  <div
+                    style="
+                      width: 30px;
+                      height: 30px;
+                      background-color: #3ca5a9;
+                      margin-right: 15px;
+                      border-radius: 100px;
+                    "
+                  ></div>
+                  <p style="font-size: 1.25rem">Stable</p>
+                </div>
+
+                <div class="mr-5" style="display: flex">
+                  <div
+                    style="
+                      width: 30px;
+                      height: 30px;
+                      background-color: #fa863d;
+                      margin-right: 15px;
+                      border-radius: 100px;
+                    "
+                  ></div>
+                  <p style="font-size: 1.25rem">Unstable</p>
+                </div>
+
+                <div class="mr-5" style="display: flex">
+                  <div
+                    style="
+                      width: 30px;
+                      height: 30px;
+                      background-color: #485578;
+                      margin-right: 15px;
+                      border-radius: 100px;
+                    "
+                  ></div>
+                  <p style="font-size: 1.25rem">Unknown</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="streamGraph" style="width: 700px; height: 700px; position: relative"></div>
+            <div id="tooltip"></div>
+            <div class="chart-title">Financial Health of residents</div>
+          </div>
+          <div>
+            <div class="controls d-flex mb-5">
+              <div class="select-div w-75">
+                <label for="radarSelector" class="form-label">Group By</label>
+                <select class="form-select" aria-label="Default select example" id="radarSelector">
+                  <option value="edu" selected>Education Level</option>
+                  <option value="sal">Salary Range (USD)</option>
+                </select>
+              </div>
+              <div class="radio-div w-50">
+                <form id="select-from">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input blue"
+                      type="checkbox"
+                      id="switchIncome"
+                      checked
+                    />
+                    <label class="form-check-label" for="switchIncome">Income</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input orange"
+                      type="checkbox"
+                      id="switchExpenses"
+                      checked
+                    />
+                    <label class="form-check-label" for="switchExpense">Expenses</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input green"
+                      type="checkbox"
+                      id="switchSavings"
+                      checked
+                    />
+                    <label class="form-check-label" for="switchSavings">Savings</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div id="chart-div" style="width: 700px; height: 700px; position: relative"></div>
+            <div class="chart-title">Financial Habits of residents</div>
+          </div>
+
+          <div style="height: 876px">
+            <div class="controls d-flex mb-5">
+              <div class="radio-div w-50">
+                <form id="parallel-from">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input blue"
+                      type="checkbox"
+                      id="switchGraduate"
+                      checked
+                    />
+                    <label class="form-check-label" id="Graduate" for="switchGraduate"
+                      >Graduate</label
+                    >
+                  </div>
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input orange"
+                      type="checkbox"
+                      id="switchBachelors"
+                      checked
+                    />
+                    <label class="form-check-label" id="Bachelors" for="switchBachelors"
+                      >Bachelors</label
+                    >
+                  </div>
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input green"
+                      type="checkbox"
+                      id="switchHighSchool"
+                      checked
+                    />
+                    <label class="form-check-label" id="HighSchool" for="switchHighSchool"
+                      >High School</label
+                    >
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input yellow" type="checkbox" id="switchLow" checked />
+                    <label class="form-check-label" id="Low" for="switchLow">Low</label>
+                  </div>
+                  <div class="form-check form-switch" id="last">
+                    <input
+                      class="form-check-input lightBlue"
+                      type="checkbox"
+                      id="switch4.5"
+                      checked
+                    />
+                    <label class="form-check-label" id="4.5" for="switch4.5">1k-4.5k</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div
+              id="ParallelChart"
+              style="width: 700px; height: 520px; position: relative; margin-top: 150px"
+            ></div>
+
+            <div class="chart-title">Monthly Savings of residents</div>
+          </div>
+        </div>
+
+        <img src="./img/Q3.svg" alt="Question-3" class="question-svg" />
+        <div class="task3-panel task-panel" id="task3">
+          <div id="map_div" class="text-center">
+            <svg class="map_svg m1" id="map_svg"></svg>
+            <div class="chart-title">Turnover By Employers</div>
+
+            <div
+              id="tooltip"
+              style="
+                position: absolute;
+                opacity: 0;
+                background-color: white;
+                border: 1px solid gray;
+                padding: 8px;
+              "
+            ></div>
+          </div>
+          <div id="task3_2" class="">
+            <svg class="map_svg" id="map_bar_svg"></svg>
+            <div id="last-chart-title" class="chart-title d-none">
+              Turnover and Number of Jobs by Employer
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-details text-center mb-5 pb-5">
+        <img src="./img/TeamImg.svg" alt="Meet The Team!" class="team-img" />
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- Challenge 3: Economic considers the financial health of the city. Over time, are businesses growing or shrinking? 
+  How are people changing jobs? Are standards of living improving or declining over time?
+
+Consider the financial status of Engagement’s businesses and residents, and use visual analytic techniques to address these questions.
+
+- Over the period covered by the dataset, which businesses appear to be more prosperous? Which appear to be struggling? 
+Describe your rationale for your answers. Limit your response to 10 images and 500 words.
+- How does the financial health of the residents change over the period covered by the dataset? 
+How do wages compare to the overall cost of living in Engagement? Are there groups that appear to exhibit similar patterns? Describe your rationale for your answers. 
+Limit your response to 10 images and 500 words.
+- Describe the health of the various employers within the city limits. What employment patterns do you observe? Do you notice any areas of particularly high or low turnover? 
+Limit your response to 10 images and 500 words. -->
