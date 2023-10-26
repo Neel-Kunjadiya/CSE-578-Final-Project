@@ -2,8 +2,6 @@
 
 ## _Navigating the Economic Landscape_
 
-[<img src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png"  width="300" height="300">](https://github.com/asu-cse578-f2023/Dhruvil-Vishal-Niket-Nikhil-Shivam-Neel)
-
 The application's visualizations provide actionable insights into the economic landscape of Engagement, Ohio. It addresses questions related to business prosperity, residents' financial health, and employment dynamics. The rationale behind each visualization is rooted in the need to support the city planning team's decision-making process for community revitalization efforts.
 
 ## Youtube video
